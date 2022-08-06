@@ -21,10 +21,9 @@ make_manifest_folder <- function(path) {
 get_version_directories <- function(path) {
 
   names_valid <-
-    fs::dir_ls(path, type = "directory") |>
-    keep(~fs::file_exists(fs::path(.x, "data.txt"))) |>
-    fs::path_rel(path) |>
-    identity()
+    fs::dir_ls(path, type = "directory") %>%
+    keep(~fs::file_exists(fs::path(.x, "data.txt"))) %>%
+    fs::path_rel(path)
 
   names_valid
 }

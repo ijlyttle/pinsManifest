@@ -30,6 +30,7 @@ Imports:
     fs,
     glue,
     lifecycle,
+    magrittr,
     pins,
     rlang,
     withr
