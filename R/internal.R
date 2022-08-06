@@ -20,6 +20,10 @@ make_manifest_folder <- function(path) {
 
 get_version_directories <- function(path) {
 
+  # given a `path` to a pin directory,
+  # return an unnamed character vector:
+  #  - values are names of version sub-directories (contain data.txt)
+
   names_valid <-
     fs::dir_ls(path, type = "directory") %>%
     keep(~fs::file_exists(fs::path(.x, "data.txt"))) %>%
