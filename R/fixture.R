@@ -21,11 +21,14 @@ create_test_fixture <- function() {
   pins::pin_write(board_fixture, mtcars, name = "mtcars-json", type = "json")
 
   # write phantom directory (no data.txt)
-  fs::dir_create(fs::path(path_pins, "mtcars-json", "not-a-pin"))
+  fs::dir_create(fs::path(path_pins, "mtcars-json", "not-a-version"))
 
   pins::pin_write(board_fixture, mtcars, name = "mtcars-csv", type = "csv")
   Sys.sleep(2)
   pins::pin_write(board_fixture, mtcars, name = "mtcars-csv", type = "csv")
+
+  # write phantom pin
+  fs::dir_create(path_pins, "not-a-pin")
 
   invisible(NULL)
 }
