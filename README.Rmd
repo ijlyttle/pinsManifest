@@ -1,0 +1,35 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+# pinsManifest
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+The goal of pinsManifest is to help with a particular use-case for [pins]():
+
+ - you create a board using `pins::board_folder()`
+ - you serve the board using `pins::board_url()`
+ 
+The mechanism is to make a *manifest* file that you can use to create a `pins::board_url()`. 
+
+## Installation
+
+You can install the development version of pinsManifest from [GitHub](https://github.com/) with:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("ijlyttle/pinsManifest")
+```
