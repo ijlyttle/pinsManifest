@@ -1,0 +1,22 @@
+test_that("pin_write_manifest() works", {
+
+  # copy test-fixture, remove pin manifest
+  tempdir <- withr::local_tempdir()
+  fs::dir_copy("pins", tempdir)
+  fs::file_delete(fs::path(tempdir, "pins", "pins.txt"))
+
+  board <- pins::board_folder(fs::path(tempdir, "pins"))
+
+  expect_error(pin_write_manifest(3), "numeric")
+
+  # create new manifest
+  expect_identical(pin_write_manifest(board), board)
+
+  # expect new manifest identical to old manifest
+  expect_true(
+    compare_file_text(
+      fs::path(tempdir, "pins", "pins.txt"),
+      fs::path("pins", "pins.txt")
+    )
+  )
+})
