@@ -6,16 +6,22 @@
 <!-- badges: start -->
 
 [![R-CMD-check](https://github.com/ijlyttle/pinsManifest/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/ijlyttle/pinsManifest/actions/workflows/R-CMD-check.yaml)
+[![Lifecycle:
+experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
 <!-- badges: end -->
 
 The goal of pinsManifest is to help with a particular use-case for
-[pins]():
+[pins](https://pins.rstudio.com/):
 
 -   you create a board using `pins::board_folder()`
 -   you serve the board using `pins::board_url()`
 
 The mechanism is to make a *manifest* file of pins used to create a
 `pins::board_url()`.
+
+It is hoped that this package can motivate a discussion to see if these
+ideas could be integrated into the pins package itself. In other words,
+one version of success is that this package need not exist.
 
 ## Installation
 
@@ -45,9 +51,8 @@ board <- pins::board_folder("/some/path")
 # add/update pins
 
 pin_write_manifest(board)
+#> Manifest file written to `/some/path/pins.txt`
 ```
-
-    #> Manifest file written to `/some/path/pins.txt`
 
 This writes a manifest file, `pins.txt` to root directory of your board.
 It stores the names of your pins and the names of each version of each
