@@ -32,8 +32,10 @@ get_version_directories <- function(path) {
   names_valid
 }
 
-# returns named list found at "{url}/pins.txt"
 get_manifest <- function(url) {
+
+  # given a `url`,
+  # returns named list found at "{url}/pins.txt"
 
   # remove trailing slash (if there)
   url <- gsub('/$', '', url)
@@ -49,5 +51,19 @@ get_manifest <- function(url) {
 # returns named list of pins (names) and URLs to latest versions
 make_manifest_url <- function(manifest, url) {
 
+  # given a `manifest` and a `url`,
+  # return a named character vector where:
+  #  - names are names of pins
+  #  - values are URLs to the latest versions of the pins
+
+  # remove trailing slash (if there)
+  url <- gsub('/$', '', url)
+
+  version_latest <- map(manifest, ~glue::glue("{url}/{max(.x)}/"))
+
+  # coerce to character vector
+  result <- unlist(version_latest)
+
+  result
 }
 
