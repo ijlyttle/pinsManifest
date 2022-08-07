@@ -29,5 +29,9 @@ pin_write_manifest.pins_board_folder <- function(board) {
   manifest <- make_manifest_folder(board$path)
   yaml::write_yaml(manifest, fs::path(board$path, "pins.txt"))
 
+  message(
+    glue::glue("Manifest file written to `{fs::path(board$path, 'pins.txt')}`")
+  )
+
   invisible(board)
 }

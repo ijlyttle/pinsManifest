@@ -10,7 +10,12 @@ test_that("pin_write_manifest() works", {
   expect_error(pin_write_manifest(3), "numeric")
 
   # create new manifest
-  expect_identical(pin_write_manifest(board), board)
+  expect_message(
+    board_return <- pin_write_manifest(board),
+    "^Manifest file"
+  )
+
+  expect_identical(board_return, board)
 
   # expect new manifest identical to old manifest
   expect_true(
