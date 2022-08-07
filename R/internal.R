@@ -59,7 +59,7 @@ make_manifest_url <- function(manifest, url) {
   # remove trailing slash (if there)
   url <- gsub('/$', '', url)
 
-  version_latest <- map(manifest, ~glue::glue("{url}/{max(.x)}/"))
+  version_latest <- imap(manifest, ~glue::glue("{url}/{.y}/{max(.x)}/"))
 
   # coerce to character vector
   result <- unlist(version_latest)

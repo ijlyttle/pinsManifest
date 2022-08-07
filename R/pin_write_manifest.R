@@ -3,6 +3,9 @@
 #' This can be used if you have a `pins::board_folder()` that you want to
 #' serve as a web-site such that others can consume using `pins::board_url()`.
 #'
+#' This function is called for the side-effect of writing a manifest file,
+#' `pins.txt`.
+#'
 #' @param board A pin board, currently only `board_folder()` is supported.
 #'
 #' @return `board`, invisibly.

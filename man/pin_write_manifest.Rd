@@ -16,3 +16,7 @@ pin_write_manifest(board)
 This can be used if you have a \code{pins::board_folder()} that you want to
 serve as a web-site such that others can consume using \code{pins::board_url()}.
 }
+\details{
+This function is called for the side-effect of writing a manifest file,
+\code{pins.txt}.
+}
