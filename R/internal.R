@@ -15,6 +15,9 @@ make_manifest_folder <- function(path) {
   # keep non-empty values
   result <- compact(result)
 
+  # subdirectories as list (for compatibility with JS, Python)
+  result <- map(result, as.list)
+
   result
 }
 

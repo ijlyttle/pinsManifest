@@ -12,6 +12,7 @@ The pins package supports URL boards, but it is difficult to manage the paths to
 Useful links:
 \itemize{
   \item \url{https://github.com/ijlyttle/pinsManifest}
+  \item \url{https://ijlyttle.github.io/pinsManifest/}
   \item Report bugs at \url{https://github.com/ijlyttle/pinsManifest/issues}
 }
 
