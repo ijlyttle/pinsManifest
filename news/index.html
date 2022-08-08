@@ -46,7 +46,8 @@
 
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="0.0.0.9000" id="pinsmanifest-0009000">pinsManifest 0.0.0.9000<a class="anchor" aria-label="anchor" href="#pinsmanifest-0009000"></a></h2>
-<ul><li>
+<ul><li><p>Modified <code><a href="../reference/pin_write_manifest.html">pin_write_manifest()</a></code> such that versions are always written as a list (array), even if there is only one item (<a href="https://github.com/ijlyttle/pinsManifest/issues/10" class="external-link">#10</a>).</p></li>
+<li>
 <p>Added public-facing functions (<a href="https://github.com/ijlyttle/pinsManifest/issues/1" class="external-link">#1</a>):</p>
 <ul><li><p><code><a href="../reference/pin_write_manifest.html">pin_write_manifest()</a></code>: given a <code>board_folder()</code> write a manifest file (<code>pins.txt</code>) of its pins and versions, in its root directory.</p></li>
 <li><p><code><a href="../reference/board_url_manifest.html">board_url_manifest()</a></code>: given a URL (for a site with a manifest), returns a <code><a href="https://pins.rstudio.com/reference/board_url.html" class="external-link">pins::board_url()</a></code>.</p></li>
