@@ -4,10 +4,17 @@
       make_manifest_folder("pins")
     Output
       $`mtcars-csv`
-      20220807T005818Z-48c73 20220807T005820Z-48c73 
+      $`mtcars-csv`[[1]]
+      [1] "20220808T195733Z-48c73"
+      
       
       $`mtcars-json`
-      20220807T005816Z-c2702 20220807T005818Z-c2702 
+      $`mtcars-json`[[1]]
+      [1] "20220808T195731Z-c2702"
+      
+      $`mtcars-json`[[2]]
+      [1] "20220808T195733Z-c2702"
+      
       
 
 # get_manifest() works
