@@ -1,5 +1,7 @@
 # pinsManifest 0.0.0.9000
 
+* Modified `pin_write_manifest()` such that versions are always written as a list (array), even if there is only one item (#10).
+
 * Added public-facing functions (#1):
 
   - `pin_write_manifest()`: given a `board_folder()` write a manifest file 
