@@ -9,7 +9,7 @@ make_manifest_folder <- function(path) {
   paths_pins <- fs::dir_ls(path, type = "directory")
 
   # map over subdirectories
-  result <- map(paths_pins, get_version_directories)
+  result <- map(paths_pins, get_version_directories, path_manifest = path)
   names(result) <- fs::path_rel(paths_pins, path)
 
   # keep non-empty values
@@ -21,7 +21,7 @@ make_manifest_folder <- function(path) {
   result
 }
 
-get_version_directories <- function(path) {
+get_version_directories <- function(path, path_manifest) {
 
   # given a `path` to a pin directory,
   # return an unnamed character vector:
@@ -30,7 +30,8 @@ get_version_directories <- function(path) {
   names_valid <-
     fs::dir_ls(path, type = "directory") %>%
     keep(~fs::file_exists(fs::path(.x, "data.txt"))) %>%
-    fs::path_rel(path)
+    fs::path_rel(path_manifest) %>%
+    map_chr(~glue::glue("{.}/")) # add trailing slash
 
   names_valid
 }
@@ -62,7 +63,7 @@ make_manifest_url <- function(manifest, url) {
   # remove trailing slash (if there)
   url <- gsub('/$', '', url)
 
-  version_latest <- imap(manifest, ~glue::glue("{url}/{.y}/{max(.x)}/"))
+  version_latest <- map_chr(manifest, ~glue::glue("{url}/{max(.x)}"))
 
   # coerce to character vector
   result <- unlist(version_latest)

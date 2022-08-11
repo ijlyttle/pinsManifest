@@ -1,5 +1,12 @@
 # pinsManifest 0.0.0.9000
 
+* Modified the manifest format to comport with the format in Python `board_urls()` (#12):
+
+   ```yaml
+   pin-one: # name of pin
+   - pin-one/20220808T201103Z-fa33e/ # list of paths relative to manifest
+   ```
+
 * Modified `pin_write_manifest()` such that versions are always written as a list (array), even if there is only one item (#10).
 
 * Added public-facing functions (#1):
