@@ -37,6 +37,10 @@ jobs:
         run: pkgdown::build_site_github_pages(new_process = FALSE, install = FALSE)
         shell: Rscript {0}
 
+      - name: Diagnose
+        run: |
+          ls -al docs
+
       # note that we don't have the "clean" option, which (as I understand)
       # lets us publish a dev version and old versions
       - name: Deploy to GitHub pages using Quarto
