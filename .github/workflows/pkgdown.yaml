@@ -49,4 +49,5 @@ jobs:
         with:
           render: false
           target: gh-pages
+          # not needed, included in _quarto.yml
           # path: docs
