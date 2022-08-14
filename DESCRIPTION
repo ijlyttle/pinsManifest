@@ -1,6 +1,6 @@
 Package: pinsManifest
 Title: Manage Manifests for URL Boards in the Pins Package
-Version: 0.0.0.9000
+Version: 0.0.0.9001
 Authors@R:
  c(
     person("Ian", "Lyttle", email = "ijlyttle@me.com", role = c("aut", "cre"),
