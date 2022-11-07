@@ -39,7 +39,7 @@ get_version_directories <- function(path, path_manifest) {
 get_manifest <- function(url) {
 
   # given a `url`,
-  # returns named list found at "{url}/pins.txt"
+  # returns named list found at "{url}/_pins.yaml"
 
   # remove trailing slash (if there)
   url <- gsub('/$', '', url)
@@ -47,7 +47,7 @@ get_manifest <- function(url) {
   tempfile <- withr::local_tempfile()
 
   # pins:::http_download() might be preferable
-  utils::download.file(glue::glue("{url}/pins.txt"), tempfile, quiet = TRUE)
+  utils::download.file(glue::glue("{url}/_pins.yaml"), tempfile, quiet = TRUE)
 
   yaml::read_yaml(tempfile)
 }

@@ -17,7 +17,7 @@ Description: The pins package supports URL boards, but it is difficult to manage
 License: Apache License (>= 2)
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.2.0
+RoxygenNote: 7.2.1
 URL: https://github.com/ijlyttle/pinsManifest,
     https://ijlyttle.github.io/pinsManifest/
 BugReports: https://github.com/ijlyttle/pinsManifest/issues

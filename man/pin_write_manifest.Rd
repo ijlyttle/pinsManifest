@@ -18,5 +18,5 @@ serve as a web-site such that others can consume using \code{pins::board_url()}.
 }
 \details{
 This function is called for the side-effect of writing a manifest file,
-\code{pins.txt}.
+\verb{_pins.yaml}.
 }

@@ -51,10 +51,10 @@ board <- pins::board_folder("/some/path")
 # add/update pins
 
 pin_write_manifest(board)
-#> Manifest file written to `/some/path/pins.txt`
+#> Manifest file written to `/some/path/_pins.yaml`
 ```
 
-This writes a manifest file, `pins.txt` to root directory of your board.
+This writes a manifest file, `_pins.yaml` to root directory of your board.
 It stores the names of your pins and the names of each version of each
 pin.
 
@@ -72,8 +72,8 @@ where:
 The problem is that the names of version directories are, by design,
 hard to predict and manage manually.
 
-This is where a manifest file, `pins.txt` can help. When you call
-`board_url_manifest()`, it downloads `pins.txt`, then parses it to
+This is where a manifest file, `_pins.yaml` can help. When you call
+`board_url_manifest()`, it downloads `_pins.yaml`, then parses it to
 provide information to build a `pins::board_url()`.
 
 A demonstration board is provided using `url_demo_manifest()`:
@@ -107,7 +107,7 @@ pins::pin_meta(board_demo, "mtcars-json")
 The function `manifest_latest()`:
 
 -   takes a `url` describing the root directory of a board
--   downloads and parses the `pins.txt` file at the root
+-   downloads and parses the `_pins.yaml` file at the root
 -   returns a named character vector where:
     -   names are names of pins
     -   values are URLs to directory for the latest version for each pin

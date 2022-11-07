@@ -28,9 +28,9 @@ create_test_fixture <- function() {
   # write phantom pin
   fs::dir_create(path_pins, "not-a-pin")
 
-  # write pins.txt
+  # write _pins.yaml
   manifest <- make_manifest_folder(path_pins)
-  yaml::write_yaml(manifest, fs::path(path_pins, "pins.txt"))
+  yaml::write_yaml(manifest, fs::path(path_pins, "_pins.yaml"))
 
   invisible(NULL)
 }

@@ -4,7 +4,7 @@
 #' serve as a web-site such that others can consume using `pins::board_url()`.
 #'
 #' This function is called for the side-effect of writing a manifest file,
-#' `pins.txt`.
+#' `_pins.yaml`.
 #'
 #' @param board A pin board, currently only `board_folder()` is supported.
 #'
@@ -27,10 +27,10 @@ pin_write_manifest.default <- function(board) {
 pin_write_manifest.pins_board_folder <- function(board) {
 
   manifest <- make_manifest_folder(board$path)
-  yaml::write_yaml(manifest, fs::path(board$path, "pins.txt"))
+  yaml::write_yaml(manifest, fs::path(board$path, "_pins.yaml"))
 
   message(
-    glue::glue("Manifest file written to `{fs::path(board$path, 'pins.txt')}`")
+    glue::glue("Manifest file written to `{fs::path(board$path, '_pins.yaml')}`")
   )
 
   invisible(board)

@@ -12,7 +12,7 @@
 * Added public-facing functions (#1):
 
   - `pin_write_manifest()`: given a `board_folder()` write a manifest file 
-     (`pins.txt`) of its pins and versions, in its root directory.
+     (`_pins.yaml`) of its pins and versions, in its root directory.
   
   - `board_url_manifest()`: given a URL (for a site with a manifest), 
      returns a `pins::board_url()`. 
