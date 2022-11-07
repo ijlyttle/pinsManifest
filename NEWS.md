@@ -1,5 +1,7 @@
 # pinsManifest 0.0.0.9000
 
+* Updated to use `_pins.yaml` instead of `pins.txt`, following what's happening at {pins}.
+
 * Modified the manifest format to comport with the format in Python `board_urls()` (#12):
 
    ```yaml
