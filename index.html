@@ -102,8 +102,8 @@
 <span><span class="co"># add/update pins</span></span>
 <span></span>
 <span><span class="fu"><a href="reference/pin_write_manifest.html">pin_write_manifest</a></span><span class="op">(</span><span class="va">board</span><span class="op">)</span></span>
-<span><span class="co">#&gt; Manifest file written to `/some/path/pins.txt`</span></span></code></pre></div>
-<p>This writes a manifest file, <code>pins.txt</code> to root directory of your board. It stores the names of your pins and the names of each version of each pin.</p>
+<span><span class="co">#&gt; Manifest file written to `/some/path/_pins.yaml`</span></span></code></pre></div>
+<p>This writes a manifest file, <code>_pins.yaml</code> to root directory of your board. It stores the names of your pins and the names of each version of each pin.</p>
 <p>Note: <code><a href="reference/pin_write_manifest.html">pin_write_manifest()</a></code> supports only boards created using <code><a href="https://pins.rstudio.com/reference/board_folder.html" class="external-link">pins::board_folder()</a></code>.</p>
 </div>
 <div class="section level3">
@@ -115,7 +115,7 @@
 <li>values are the URLs that point to a version-directory</li>
 </ul>
 <p>The problem is that the names of version directories are, by design, hard to predict and manage manually.</p>
-<p>This is where a manifest file, <code>pins.txt</code> can help. When you call <code><a href="reference/board_url_manifest.html">board_url_manifest()</a></code>, it downloads <code>pins.txt</code>, then parses it to provide information to build a <code><a href="https://pins.rstudio.com/reference/board_url.html" class="external-link">pins::board_url()</a></code>.</p>
+<p>This is where a manifest file, <code>_pins.yaml</code> can help. When you call <code><a href="reference/board_url_manifest.html">board_url_manifest()</a></code>, it downloads <code>_pins.yaml</code>, then parses it to provide information to build a <code><a href="https://pins.rstudio.com/reference/board_url.html" class="external-link">pins::board_url()</a></code>.</p>
 <p>A demonstration board is provided using <code><a href="reference/url_demo_manifest.html">url_demo_manifest()</a></code>:</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">board_demo</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/board_url_manifest.html">board_url_manifest</a></span><span class="op">(</span><span class="fu"><a href="reference/url_demo_manifest.html">url_demo_manifest</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
@@ -146,7 +146,7 @@
 <p>The function <code><a href="reference/manifest_latest.html">manifest_latest()</a></code>:</p>
 <ul>
 <li>takes a <code>url</code> describing the root directory of a board</li>
-<li>downloads and parses the <code>pins.txt</code> file at the root</li>
+<li>downloads and parses the <code>_pins.yaml</code> file at the root</li>
 <li>returns a named character vector where:<ul>
 <li>names are names of pins</li>
 <li>values are URLs to directory for the latest version for each pin</li>
